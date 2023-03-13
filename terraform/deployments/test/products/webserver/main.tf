@@ -23,7 +23,7 @@ module "ec2_instance" {
     key_name                    = each.value.key_name
     name                        = each.value.name
     subnet_id                   = each.value.subnet_id
-    vpc_security_group_ids      = each.value.vpc_security_group_ids
+    vpc_security_group_ids      = [module.security_group.security_group_id]
     tags                        = each.value.tags
     user_data                   = each.value.user_data
     rootvolume_size             = each.value.rootvolume_size

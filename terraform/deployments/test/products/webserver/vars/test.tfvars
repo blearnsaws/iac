@@ -42,16 +42,21 @@ ec2s = [
      }
     instance_type               = "t2.micro"
     key_name                    = "bastion1"
-    name                        = "Bastion-1"
+    name                        = "webserver-1"
     subnet_id                   = "subnet-0b5193086e82fd626"
     vpc_security_group_ids      = ["sg-004da30f5a9709de3"]
     tags = {
-      Use          = "Test",
-      Deployed_by  = "Terraform"
+      Use          = "webserver",
+      Deployed_by  = "Terraform",
+      Product      = "webserver",
       Project_code =  "001"
     }
     user_data   = <<-EOF
           #!/bin/bash
+          sudo yum update -y
+          sudo yum install -y httpd
+          sudo echo 'If you can read this, the apache webserver is running!' > /var/www/html/index.html
+          sudo systemctl enable --now httpd
           echo 'Deployed via terraform' > /tmp/deployment 
           EOF
     rootvolume_size = 8
