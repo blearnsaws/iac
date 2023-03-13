@@ -1,8 +1,8 @@
 variable "sg" {
   type = object({
-    name = string
+    name        = string
     description = string
-    vpc_id = string
+    vpc_id      = string
     ingress = list(object({
         cidr_blocks      = list(string)
         description      = string  

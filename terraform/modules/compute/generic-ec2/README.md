@@ -1,2 +1,2 @@
 ## Generic EC2 instance deployment
-Deployes EC2 instances with an additional EBS volumes with security group rules.
+Deployes EC2 instance(s) with an additional EBS volume.

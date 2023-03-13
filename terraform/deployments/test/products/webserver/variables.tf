@@ -16,21 +16,5 @@ variable "ec2s" {
     user_data              = string
     rootvolume_size        = number
     rootvolume_type        = string
-    sg_ingress = list(object({
-      description       = string
-      cidr_blocks       = list(string)
-      from_port         = number
-      protocol          = string
-      to_port           = number
-      security_group_id = string
-    }))
-    sg_egress = list(object({
-      description       = string
-      cidr_blocks       = list(string)
-      from_port         = number
-      protocol          = string
-      to_port           = number
-      security_group_id = string
-    }))
   }))
 }

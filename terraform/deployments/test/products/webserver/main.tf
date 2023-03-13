@@ -16,7 +16,5 @@ module "ec2_instance" {
     user_data                   = each.value.user_data
     rootvolume_size             = each.value.rootvolume_size
     rootvolume_type             = each.value.rootvolume_type
-    sg_egress                   = each.value.sg_egress
-    sg_ingress                  = each.value.sg_ingress
   }
 }

@@ -3,9 +3,9 @@ variable "ec2" {
     ami                         = string
     associate_public_ip_address = bool
     ebs = object({
-      device_name             = string      
-      size                    = number
-      type                    = string
+      device_name               = string      
+      size                      = number
+      type                      = string
     })    
     instance_type               = string
     key_name                    = string
@@ -16,21 +16,5 @@ variable "ec2" {
     user_data                   = string
     rootvolume_size             = number
     rootvolume_type             = string
-  #   sg_ingress = list(object({
-  #     description       = string      
-  #     cidr_blocks       = list(string)      
-  #     from_port         = number
-  #     protocol          = string      
-  #     to_port           = number
-  #     security_group_id = string
-  # }))
-  #   sg_egress = list(object({
-  #     description       = string      
-  #     cidr_blocks       = list(string)      
-  #     from_port         = number
-  #     protocol          = string      
-  #     to_port           = number
-  #     security_group_id = string
-  # }))  
   })
 }
