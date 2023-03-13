@@ -1,3 +1,15 @@
+module "security_group" {
+  source = "git::https://github.com/blearnsaws/iac.git//terraform/modules/network/security_group?ref=main"  
+
+  sg = {
+    name        = var.sg.name
+    description = var.sg.description
+    vpc_id      = var.sg.vpc_id
+    ingress     = var.sg.ingress
+    egress      = var.sg.egress
+  }
+}
+
 module "ec2_instance" {
   source = "git::https://github.com/blearnsaws/iac.git//terraform/modules/compute/generic-ec2?ref=main"
 
