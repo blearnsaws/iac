@@ -22,32 +22,32 @@ ec2 = {
         EOF
   rootvolume_size = 8
   rootvolume_type = "gp2"
-  sg_ingress = [
-    {
-        description       = "SSH ingress rule"    
-        cidr_blocks       = ["0.0.0.0/0"]       # Not good practice to open to the world
-        from_port         = 22
-        protocol          = "tcp"      
-        to_port           = 22
-        security_group_id = "sg-004da30f5a9709de3"
-    },
-    {
-        description       = "RDP ingress rule"    
-        cidr_blocks       = ["0.0.0.0/0"]      # Not good practice to open to the world
-        from_port         = 3389
-        protocol          = "tcp"      
-        to_port           = 3389
-        security_group_id = "sg-004da30f5a9709de3"
-    }  
-  ]
-  sg_egress = [
-    {
-        description       = "ALL egress rule"    
-        cidr_blocks       = ["0.0.0.0/0"]      # Not good practice to open to the world
-        from_port         = 0
-        protocol          = "-1"      
-        to_port           = 0
-        security_group_id = "sg-004da30f5a9709de3"
-    }
-  ]
+  # sg_ingress = [
+  #   {
+  #       description       = "SSH ingress rule"    
+  #       cidr_blocks       = ["0.0.0.0/0"]       # Not good practice to open to the world
+  #       from_port         = 22
+  #       protocol          = "tcp"      
+  #       to_port           = 22
+  #       security_group_id = "sg-004da30f5a9709de3"
+  #   },
+  #   {
+  #       description       = "RDP ingress rule"    
+  #       cidr_blocks       = ["0.0.0.0/0"]      # Not good practice to open to the world
+  #       from_port         = 3389
+  #       protocol          = "tcp"      
+  #       to_port           = 3389
+  #       security_group_id = "sg-004da30f5a9709de3"
+  #   }  
+  # ]
+  # sg_egress = [
+  #   {
+  #       description       = "ALL egress rule"    
+  #       cidr_blocks       = ["0.0.0.0/0"]      # Not good practice to open to the world
+  #       from_port         = 0
+  #       protocol          = "-1"      
+  #       to_port           = 0
+  #       security_group_id = "sg-004da30f5a9709de3"
+  #   }
+  # ]
 }

@@ -27,26 +27,26 @@ resource "aws_volume_attachment" "test_ebs_attach" {
   instance_id      = aws_instance.test_ec2.id
 }
 
-resource "aws_security_group_rule" "test_sg_ingress" {
-  for_each = { for each in var.ec2.sg_ingress : each.description => each }
+# resource "aws_security_group_rule" "test_sg_ingress" {
+#   for_each = { for each in var.ec2.sg_ingress : each.description => each }
 
-  description       = each.value.description
-  cidr_blocks       = each.value.cidr_blocks
-  from_port         = each.value.from_port
-  protocol          = each.value.protocol
-  security_group_id = each.value.security_group_id  
-  to_port           = each.value.to_port
-  type              = "ingress"
-}
+#   description       = each.value.description
+#   cidr_blocks       = each.value.cidr_blocks
+#   from_port         = each.value.from_port
+#   protocol          = each.value.protocol
+#   security_group_id = each.value.security_group_id  
+#   to_port           = each.value.to_port
+#   type              = "ingress"
+# }
 
-resource "aws_security_group_rule" "test_sg_egress" {
-  for_each = { for each in var.ec2.sg_egress : each.description => each }
+# resource "aws_security_group_rule" "test_sg_egress" {
+#   for_each = { for each in var.ec2.sg_egress : each.description => each }
 
-  description       = each.value.description
-  cidr_blocks       = each.value.cidr_blocks
-  from_port         = each.value.from_port
-  protocol          = each.value.protocol
-  security_group_id = each.value.security_group_id  
-  to_port           = each.value.to_port
-  type              = "egress"
-}
+#   description       = each.value.description
+#   cidr_blocks       = each.value.cidr_blocks
+#   from_port         = each.value.from_port
+#   protocol          = each.value.protocol
+#   security_group_id = each.value.security_group_id  
+#   to_port           = each.value.to_port
+#   type              = "egress"
+# }
