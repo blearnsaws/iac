@@ -18,7 +18,15 @@ sg = {
         // ipv6_cidr_blocks = ["::/0"]
         protocol         = "tcp"
         to_port          = 3389
-    }    
+    },
+    {
+        cidr_blocks      = ["0.0.0.0/0"]
+        description      = "HTTP ingress rule"
+        from_port        = 80
+        // ipv6_cidr_blocks = ["::/0"]
+        protocol         = "tcp"
+        to_port          = 80
+    }         
     ]
     egress = [{
         cidr_blocks      = ["0.0.0.0/0"]
