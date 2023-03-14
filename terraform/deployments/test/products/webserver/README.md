@@ -14,14 +14,14 @@ flowchart LR
   subgraph AWS
       subgraph VPC
           subgraph Availability Zone
-          subgraph ENI
+          subgraph SecurityGroup
           end
           subgraph EC2
           end
         end
     end
   end
-  USERS --- ENI
-  ENI --- EC2
+  USERS --- SecurityGroup
+  SecurityGroup --- EC2
 
 ```

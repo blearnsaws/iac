@@ -1,5 +1,5 @@
 module "security_group" {
-  source = "git::https://github.com/blearnsaws/iac.git//terraform/modules/network/security_group?ref=main"  
+  source = "git::https://github.com/blearnsaws/iac.git//terraform/modules/network/security_group?ref=v0.01"  
 
   sg = {
     name        = var.sg.name
@@ -11,7 +11,7 @@ module "security_group" {
 }
 
 module "ec2_instance" {
-  source = "git::https://github.com/blearnsaws/iac.git//terraform/modules/compute/generic-ec2?ref=main"
+  source = "git::https://github.com/blearnsaws/iac.git//terraform/modules/compute/generic-ec2?ref=v0.01"
 
   for_each = { for ec2 in var.ec2s : ec2.name => ec2 }
 
